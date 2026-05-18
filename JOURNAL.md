@@ -54,3 +54,46 @@ Think I'm ready to start actually planning this out in CAD. I found [this](https
 Ok I did a bit more research, and I want to slightly pivot my plans. Instead of jumping straight into modeling this in CAD, I want to buy a motor first and see how well it performs, and also see its actual shape in real life as opposed to the, for lack of a better term, shitty CAD model that I found. This will let me actually CAD effectively instead of guessing. I can still work on the actual gearbox and the output stage while I wait. I've got finals to study for though so I'll save that for another time.
 
 **Total time spent: 35 minutes**
+
+# May 17: CAD Work
+
+I found [this](https://grabcad.com/library/mks-odrive-mini-1) model of the motor controller, the step file that they provided did not work, so I had to import the .dwg file they gave into Fusion 360, then export that as a .step for it to work inside of OnShape:
+
+<img width="938" height="793" alt="image" src="https://github.com/user-attachments/assets/35519730-ee0e-4793-888b-a00f0aa326fc" />
+
+The problem now is how I'm going to mount everything. Mounting the motor controller is pretty straight forward, really all I need are some heat-set inserts in the base motor casing that I can use to bolt it directly on. The problem is the motor itself. The CAD is very unclear about this (so is the listing on aliexpress itself) but I'm assuming that the shaft in the center of the bolt circle rotates independently from the bolt holes:
+
+<img width="818" height="879" alt="image" src="https://github.com/user-attachments/assets/88e6d4ed-7d00-459b-911c-e76cd5789410" />
+
+Most motors like this have some sort of bearing around the shaft, but it isn't visible in the CAD, and for some reason all the distributors of the motor seem to be allergic to giving any views other than the front of the motor, so I'm hoping this is actually how it's going to function. The best way to mount this is probably to have some countersunk holes on the bottom of the motor carriage, on the same face as the motor controller's heat-set inserts, where I can fasten the motor with some countersunk bolts. Now, for the motor controller to actually find the position that the motor is in, there needs to be a diametric magnet on the motor shaft that the motor encoder located on the back of the controller can read the position of. A diametric magnet is essentially just a magnet magnetized along its diameter as opposed to its vertical midplane. This allows the encoder to read the position of the poles, which translates to the position of the motor. [McMaster-Carr](https://www.mcmaster.com/products/magnets/direction-of-magnetization~through-diameter/) has a pretty large catalogue of diametric magnets. An 1/8" magnet will fit pretty well on the shaft of the motor. [This](https://www.mcmaster.com/5862K411/) magnet meets my specifications pretty well. It's almost the perfect size to fit directly on the shaft. I designed this small 3D printed part to mount the magnet:
+
+<img width="783" height="677" alt="image" src="https://github.com/user-attachments/assets/0629f334-e15d-4821-a044-f07fc8d4289e" />
+
+I'm going to quickly print it to ensure it can be printed, it's a really small part so I'm concerned if it can be printed or not.
+
+<img width="3072" height="4096" alt="image" src="https://github.com/user-attachments/assets/462f281f-0d91-4fb1-89cd-5871a2e88644" />
+
+It printed, its so small though that I'm not sure if the parts will actually fit? If not, I will just directly glue the magnet on with a template.
+
+I started making a layout sketch of the entire actuator, what I realized was that in order to keep a 2mm distance from the onboard motor controller and the magnet, there would only be around 1mm of clearance for a countersunk hole... which is not enough. To fix this, I'm using [this](https://www.mcmaster.com/5862K202/) magnet instead, which is a 1/16" taller. I have around 2.5mm of room now, which is definitely enough. Here is the sketch so far:
+
+<img width="1162" height="866" alt="image" src="https://github.com/user-attachments/assets/23aba789-3f0c-478f-8171-5519c5fc2c40" />
+
+Alright it's time to talk about the gear reduction I'm using. In the past, I've used 8:1 with success, and I think I'm going to stick with 8:1 for this as well. I would like to use 4 planet gears, but it's not quite possible to get them to fit...
+
+<img width="1170" height="901" alt="image" src="https://github.com/user-attachments/assets/39888982-8ca5-4409-adb1-317c86c85303" />
+
+Which is why I'm just sticking with 3. With some playing around, I found that the perfect size for the gears are:
+
+- Sun: 8 teeth
+- Planet: 24 teeth
+- Ring: 56 teeth
+
+Using all of that, I made a (VERY!!!!) rough layout sketch of the actuator:
+
+<img width="745" height="582" alt="image" src="https://github.com/user-attachments/assets/8145a717-760f-4def-80a0-04ebc9186660" />
+<img width="815" height="801" alt="image" src="https://github.com/user-attachments/assets/97eecfa5-131b-457f-a970-ce96932e7804" />
+
+I very much expect to change all of this later but for now it's good enough for me to start cadding the actual parts :)
+
+**Total time spent: 2.33 hours**
