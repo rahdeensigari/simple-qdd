@@ -11,7 +11,7 @@ Essentially, my goal is to create a full 6-axis robotic arm, but in order to act
 
 ![image](docs/oldQDD.jpg)
 
-The problem with this actuator however is that it is too large, heavy, and expensive to use for an actual 6-axis arm. That's why I'm making this, a smaller, lighter, and cheaper robotic actuator that can still be powerful enough to effectively drive a robotic arm.
+The problem with this actuator however is that it is too large, heavy, and expensive to use for an actual 6-axis arm. That's why I'm making this, a smaller, lighter, and cheaper robotic actuator that can still be powerful enough to effectively drive a robotic arm. Specifically, I want this actuator to be at most 3" in diameter.
 
 In mechatronics applications like this, it is important for actuators to be somthing called *Quasi-Direct Drive.* Quasi-Direct Drive (QDD) actuators have a high enough gear ratio so that they can actually move signficant loads while not being so powerful that they cannot be backdriven. This is important as QDD actuators like this can completely eliminate the need for external touch sensors, as the actuator cannot overpower the external forces that are put upon it. This allows for the firmware to detect the resulting current increase and register that it has came in contact with an object.
 
@@ -97,3 +97,29 @@ Using all of that, I made a (VERY!!!!) rough layout sketch of the actuator:
 I very much expect to change all of this later but for now it's good enough for me to start cadding the actual parts :)
 
 **Total time spent: 2.33 hours**
+
+# May 18: More CAD Work - Physical Parts
+
+I started by starting to make the motor carriage, but I think there's a very big (literally) problem:
+
+<img width="1028" height="980" alt="image" src="https://github.com/user-attachments/assets/37363dc4-3b24-4753-85bd-382495c858fa" />
+
+As you can see, if I want my motor controller to fit nicely in the actuator profile, I would need to make it much larger in diameter. This would cause it go out of my 3" diameter design constraint. So, the only option would be to find a motor controller with a smaller profile. My first thought was the ODrive Mini. It's more expensive, but it has the same features as the XDrive while being much smaller plus having the added benefit of having a GUI. Another option would be to use a cheaper controller like the moteus-c1 that doesn't have UCB-C compatibility, then making my own CAN to USB-C adapter. The price difference is negligible enough that it's not worth doing that though, so I'm just going to pivot to the ODrive Micro for now. Unfortunately this means I'm going to have to change a lot of stuff. Because of this change, I can actually go back to using a 1/16" tall magnet!
+
+Redid the layout sketch:
+
+<img width="731" height="780" alt="image" src="https://github.com/user-attachments/assets/48778d6c-2270-4763-838b-408de8ea3d92" />
+
+Didn't really journal as I was working on it so I'm just to explain what happened. I started modeling the motor carriage. Since there are components under the pcb as well, I had to slightly offset it from the base of the motor carriage. At first, I tried adding a large flange at the bottom, but it still interfered with some of the components at the very edge of the board so I'm just going to use some 3dp spacers instead:
+
+<img width="678" height="555" alt="image" src="https://github.com/user-attachments/assets/c64fbc03-8f11-4111-b112-ae4e1aa4b2fa" />
+
+Like I mentioned before, the motor is mounted by some countersunk bolts right below the motor controller. The actual controller is mounted with [these](https://www.mcmaster.com/94459A769/) heat-set inserts. I also started thinking about the gears. I decided to bring the dp up to 22.5 instead of 20 as that allow the pitch diameter of the ring gear to sit slightly further in from the inside of the motor carriage:
+
+<img width="649" height="381" alt="image" src="https://github.com/user-attachments/assets/0b0e5e1e-b719-4858-b2fb-1b1328e2b979" />
+
+The entire assembly so far:
+
+<img width="1148" height="950" alt="image" src="https://github.com/user-attachments/assets/795ce0a5-3703-4853-ba2c-050ebb7c2cdf" />
+
+**Total time spent: 2.4 hours**
