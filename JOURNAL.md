@@ -1,4 +1,4 @@
----
+<img width="1119" height="866" alt="image" src="https://github.com/user-attachments/assets/e9fb76c5-c45f-42af-8b4d-5b2cf8a822d2" />---
 title: "Quasi-Direct Drive Actuator"
 author: "Rahdeen Sigari"
 description: "A small and cheap quasi-direct driven planetary robotic actuator."
@@ -123,3 +123,35 @@ The entire assembly so far:
 <img width="1148" height="950" alt="image" src="https://github.com/user-attachments/assets/795ce0a5-3703-4853-ba2c-050ebb7c2cdf" />
 
 **Total time spent: 2.4 hours**
+
+# May 22: CAD Work
+
+Look what came today!
+
+<img width="3072" height="4080" alt="image" src="https://github.com/user-attachments/assets/4af4d4db-c58f-48cd-921a-b74a987cc9e8" />
+
+And, as I guessed, the CAD was inaccurate after all. Turns out where I thought there was just a nub on the bottom on the motor was actually a screw:
+
+<img width="1440" height="1920" alt="image" src="https://github.com/user-attachments/assets/5d634341-f90f-444b-98e1-29b3dc2d3acb" />
+
+Because of this I have to change the magnet mount. I started by updating the CAD to be accurate:
+
+<img width="849" height="620" alt="image" src="https://github.com/user-attachments/assets/7ebb63d3-0ae4-4e3a-933d-03594091e318" />
+
+Then I redid the magnet mount:
+
+<img width="848" height="668" alt="image" src="https://github.com/user-attachments/assets/a180b837-7a2f-4e76-91db-7f1e977a99f1" />
+
+Then, I made the entire casing smaller, there was a lot of unnecessary extra space between the motor and the casing before that I got rid of:
+
+<img width="980" height="959" alt="image" src="https://github.com/user-attachments/assets/6454e0d1-dc98-4263-87b0-b33803c632a8" />
+
+Because of this, I had to increase the dp of the gears again to 27.5. The gears need a carriage to ride on, and said carriage must be able to rotate freely. This can be done using a large bearing with the carriage riding inside. For my old gearbox, I used [these](https://wcproducts.com/products/WCP-1870) bearings, and they worked wonderfully, so I'm going to continue using those. From here I moved on to modelling the sun gear. However, I encountered a problem very quickly:
+
+<img width="794" height="758" alt="image" src="https://github.com/user-attachments/assets/a2349cbe-62c6-4eed-9314-308889b2049d" />
+
+The gear itself was blocking the countsink holes. To fix this, I had to have the gear itself snap fit onto the mounting base. I had to spend a lot of time figuring out a shape that I could actually print. This is what I have right now, but I'm definitely going to have to change it:
+
+<img width="915" height="736" alt="image" src="https://github.com/user-attachments/assets/1389dc21-3155-415a-8b29-12bba9973d0c" />
+
+**Total time spent: 1.75 hours**
