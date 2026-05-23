@@ -1,4 +1,4 @@
-<img width="1119" height="866" alt="image" src="https://github.com/user-attachments/assets/e9fb76c5-c45f-42af-8b4d-5b2cf8a822d2" />---
+---
 title: "Quasi-Direct Drive Actuator"
 author: "Rahdeen Sigari"
 description: "A small and cheap quasi-direct driven planetary robotic actuator."
