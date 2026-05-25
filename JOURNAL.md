@@ -124,7 +124,7 @@ The entire assembly so far:
 
 **Total time spent: 2.4 hours**
 
-# May 22: CAD Work
+# May 22: CAD Work + Motor Came
 
 Look what came today!
 
@@ -155,3 +155,34 @@ The gear itself was blocking the countsink holes. To fix this, I had to have the
 <img width="915" height="736" alt="image" src="https://github.com/user-attachments/assets/1389dc21-3155-415a-8b29-12bba9973d0c" />
 
 **Total time spent: 1.75 hours**
+
+# May 24: CAD Work - Sun Gear and Gear Carriage
+
+Continued where I left off yesterday by continuing to iterate on ways to solve the sun gear mounting problem. At first, I tried making another of a snap fit design that could actually reasonably work:
+
+<img width="971" height="784" alt="image" src="https://github.com/user-attachments/assets/f4082810-5fa4-4868-83c3-42d356f3c3b7" />
+
+After trying to print it though, it was evident that this was not the solution, as my printer cannot print in enough detail to be able to create small features like these. Because of this, I decided to pivot to a simpler solution, which was to simply raise the gear up vertically, giving some space to get bolts into:
+
+<img width="683" height="439" alt="image" src="https://github.com/user-attachments/assets/8662b1d0-2ff6-4dbe-ab27-1cf8424436c4" />
+
+Testing it out, I found that because of the low amount of material at the base, it was very easy for the gear to snap off the mounting base. However, I could actually fit the bolts in the holes now with this modification. To increase the strength at the base, I kept some of the original gear profile intact:
+
+<img width="1133" height="666" alt="image" src="https://github.com/user-attachments/assets/759c6e18-e612-45d9-a536-3a6aa6c25f8e" />
+
+Even with this modification, the gear was still weaker than I'm happy with. For the actual production parts I am definitely going to have to use a more ductile material like PETG instead of PLA, but PLA is fine to prototype with for now. I briefly had a problem of the clearance hole for the motor shaft in the sun gear being too short, but this was a quick fix. Here's what the gear looks like on the motor, I couldn't bolt it in because I don't have the right length flathead bolts:
+
+<img width="3072" height="4080" alt="image" src="https://github.com/user-attachments/assets/69e7fd39-989e-4861-af0b-3d864295be43" />
+
+Noticed this, the motor carriage is interfering with the motor. Very easy fix:
+
+<img width="223" height="507" alt="image" src="https://github.com/user-attachments/assets/a938a631-fb8e-43a6-9eb4-f02ad0e04b3b" />
+
+(Forgot to mention this earlier, [this](https://cad.onshape.com/documents/f349bdd78c53f3325055aefc/v/0ca31cd0b35e796be912d9e2/e/53214cbff7d86d5817cf8efb?showReturnToWorkspaceLink=true) is the featurescript I used to generate the gear.
+
+I then started working on the planet gear carrier. First, I made the basic shape. The flange on the bottom rests on top of the x-contact bearing, and the cutout and hole in the middle is to give the sun gear clearance:
+
+<img width="1025" height="521" alt="image" src="https://github.com/user-attachments/assets/73a49a2a-a24e-4e02-bfe5-29095535da03" />
+<img width="927" height="265" alt="image" src="https://github.com/user-attachments/assets/098a0e15-b95b-4f12-8688-90e10f32f582" />
+
+**Total time spent: 1.32 hours**
