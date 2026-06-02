@@ -1,4 +1,4 @@
----
+<img width="1068" height="1011" alt="image" src="https://github.com/user-attachments/assets/f429d06f-565c-44be-ba92-d4482c17a77d" />---
 title: "Quasi-Direct Drive Actuator"
 author: "Rahdeen Sigari"
 description: "A small and cheap quasi-direct driven planetary robotic actuator."
@@ -241,3 +241,36 @@ With that, the CAD is actually complete! I was originally going to add a motor c
 <img width="957" height="927" alt="image" src="https://github.com/user-attachments/assets/ca5b2610-3848-4c12-a962-86e1bb3efe9f" />
 
 **Total time Spent: 3 hours**
+
+# June 2 - Touchups and Docs
+
+Before I start uploading all my documentation, I printed everything out just for a quick fit check.
+
+<img width="4080" height="3072" alt="image" src="https://github.com/user-attachments/assets/cb874c86-a226-438a-afa9-8fe1a8ff0700" />
+
+Some problems I found:
+
+- M3 clearance holes were too small. (For some reason I had it set to close fit?)
+- The actual mounting on the motor weren't aligned with the wires. I'm not going to fix this yet because I'm going to be recoiling the motor anyways.
+<img width="3072" height="4080" alt="image" src="https://github.com/user-attachments/assets/a9eac9ff-b29f-4c17-b48c-5381561da1e8" />
+
+Everything else seems to be fine right now.
+
+I added some stuff in my README, then created my BOM. A lot of cost comes from the fasteners, but I already have a lot of them.
+| Quantity | Name                  | Vendor     | Cost    | Link                                                  | Notes  |
+|----------|-----------------------|------------|---------|-------------------------------------------------------|--------|
+| 1        | 5010 BLDC Motor       | AliExpress | $19.66  | https://www.aliexpress.us/item/3256808560627221.html  |        |
+| 1        | 1.75"" X-Contact      | WCP        | $34.99  | https://wcproducts.com/products/WCP-1870              |        |
+| 3        | Needle-Roller Bearing | MCM        | 23.58   | https://www.mcmaster.com/5905K496/                    |        |
+| 7        | M3 Heatset x 3.4mm    | MCM        | 8.64    | https://www.mcmaster.com/94459A769/                   | 1 Pack |
+| 3        | M3 Heatset x 5.9mm    | MCM        | 5.48    | https://www.mcmaster.com/94459A421/                   | 1 Pack |
+| 1        | ODrive Micro          | ODrive     | 89      | https://shop.odriverobotics.com/products/odrive-micro |        |
+| 4        | M3x0.5 8mm FH         | MCM        | 5.82    | https://www.mcmaster.com/91294A128/                   | 1 Pack |
+| 4        | M3x0.5 5mm FH         | MCM        | 5.57    | https://www.mcmaster.com/91294A125/                   | 1 Pack |
+| 3        | M3x0.5 10mm FH        | MCM        | 6.36    | https://www.mcmaster.com/91294A130/                   | 1 Pack |
+| 4        | M3x0.5 10mm BH        | MCM        | 7.91    | https://www.mcmaster.com/92095A182/                   | 1 Pack |
+| 5        | M4x0.7 50mm SH        | MCM        | 15.85   | https://www.mcmaster.com/91290A186/                   | 1 Pack |
+| 5        | M4x0.7 Nuts           | MCM        | 13.25   | https://www.mcmaster.com/94645A101/                   |        |
+|          |                       |            | $236.11 |                                                       |        |
+
+**Total Time Spent: 1.25 hours**
