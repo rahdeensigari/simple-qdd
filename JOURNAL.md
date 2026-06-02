@@ -186,3 +186,58 @@ I then started working on the planet gear carrier. First, I made the basic shape
 <img width="927" height="265" alt="image" src="https://github.com/user-attachments/assets/098a0e15-b95b-4f12-8688-90e10f32f582" />
 
 **Total time spent: 1.32 hours**
+
+# June 1: CAD Work
+
+First I made the planet gear, just to get a visual of the geometry, I'm going to have to change some things about it.
+
+<img width="659" height="404" alt="image" src="https://github.com/user-attachments/assets/3905b17b-8df1-44a5-9db0-58fcea03b764" />
+
+So here's the problem, there are two solutions to get the gears to move smoothly with as little friction as possible. Either:
+
+- Completely coat the carriage with a lubricant, reducing friction without the need for any external hardware.
+- Have the planet gears rotate on bearings to smooth out movement.
+
+Since this project is completely 3D printed, and I want to reduce the mess as much as possible, I'm going to go with the second option of using bearings. Now, here's the actual issue. Bearings are huge. This is what I did in my last gearbox:
+
+<img width="901" height="587" alt="image" src="https://github.com/user-attachments/assets/e1e90b9b-f878-45db-8c1a-5941bf4135d8" />
+
+The problem is that since I'm reducing the size of my gears, I don't have enough space to fit in a full sized ball bearing set into the gear. To fix this, I need to different type of bearing. I did a bit of research, and I stumbled upon [these](https://www.mcmaster.com/5905K496/) needle-roller bearings. They're technically not as smooth as ball bearings, but with some lubrication they should still work perfectly fine.
+
+With these changes in mind, here is the planet gear I created. Unfortunately, this meant upping the heigt of the gears, and by result, the gearbox. Unfortunately just one of the results of using a stock motor for an actuator:
+
+<img width="918" height="819" alt="image" src="https://github.com/user-attachments/assets/cd944dba-8310-410e-9527-4cb98039b1dc" />
+
+I then designed these extrusions on the the gear carrier for the planet gears to rotate on. The hole in the middle is for a heat-set insert.
+
+<img width="1070" height="671" alt="image" src="https://github.com/user-attachments/assets/10af8eea-73fc-441a-acc1-6c615a4dc842" />
+
+Assembly:
+
+<img width="782" height="644" alt="image" src="https://github.com/user-attachments/assets/eef61f56-f472-4e29-bef9-7acf15d02cf8" />
+
+I'm not modelling the motion right now because I really don't care enough to. Here's the ring gear:
+
+<img width="974" height="679" alt="image" src="https://github.com/user-attachments/assets/f22f56f7-e28f-4898-8a83-a1b43e52a7ce" />
+
+Next, I mmade the output plate. There are three countersunk holes to secure it to the gear carriage, as well as three heat set inserts to mount other components to it:
+
+<img width="895" height="679" alt="image" src="https://github.com/user-attachments/assets/53417aab-99f3-4510-8f53-9070ba9cdf97" />
+
+Then, I made a top cover for the entire gearbox. I also added 5 M5 holes to put bolts through in order to secure the entire assembly:
+
+<img width="1033" height="925" alt="image" src="https://github.com/user-attachments/assets/fd3f65b5-6116-4150-97c9-634fb56dc95e" />
+
+I also added these "vents" so I could see the motor turning + because it looked cool:
+
+<img width="625" height="483" alt="image" src="https://github.com/user-attachments/assets/92f47562-7be4-4aa2-a584-7bb115caeb88" />
+
+Also, I added this wire cutout in the base of the motor carriage, without it there's nowhere for the wires to go:
+
+<img width="546" height="582" alt="image" src="https://github.com/user-attachments/assets/ffa8aff8-a27f-4bfd-a771-1a998235760e" />
+
+With that, the CAD is actually complete! I was originally going to add a motor controller cover, but I see no need to as it would just limit my access to the port:
+
+<img width="957" height="927" alt="image" src="https://github.com/user-attachments/assets/ca5b2610-3848-4c12-a962-86e1bb3efe9f" />
+
+**Total time Spent: 3 hours**
