@@ -274,3 +274,7 @@ I added some stuff in my README, then created my BOM. A lot of cost comes from t
 |          |                       |            | $236.11 |                                                       |        |
 
 **Total Time Spent: 1.25 hours**
+
+# June 3 - Note for reviewers
+
+Alright I'm kind of afraid that this is going to get returned because of the cost of the fasteners, mcmaster-carr is a local supplier for hardware, the prices are comparable to anywhere else. I can't buy individual bolts for the project, that's why I need to buy such large packs. Also, the 1.75" X-Contact bearings are specialty bearings, you cannot find that style bearing anywhere else.
