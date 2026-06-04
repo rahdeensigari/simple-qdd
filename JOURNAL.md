@@ -300,3 +300,36 @@ Here is the updated BOM:
 |          |                       |            | $205.51 |                                                       |        |
 
 **Total Time Spent: 0.58 hours**
+
+# June 4 - Preparing for Recoiling the Motor
+
+Alright first, I actually forgot to include the [diametric magnet](https://www.mcmaster.com/5862K413/) in the BOM, so I quickly updated it to reflect that.
+
+Here's the updated BOM:
+
+| Quantity | Name                     | Vendor     | Cost    | Link                                                  | Notes  |
+|----------|--------------------------|------------|---------|-------------------------------------------------------|--------|
+| 1        | 5010 BLDC Motor          | AliExpress | $19.66  | https://www.aliexpress.us/item/3256808560627221.html  |        |
+| 1        | Output Bearing           | AliExpress | $4.39   | https://www.aliexpress.us/item/3256807233759178.html  |        |
+| 3        | Needle-Roller Bearing    | MCM        | 23.58   | https://www.mcmaster.com/5905K496/                    |        |
+| 7        | M3 Heatset x 3.4mm       | MCM        | 8.64    | https://www.mcmaster.com/94459A769/                   | 1 Pack |
+| 3        | M3 Heatset x 5.9mm       | MCM        | 5.48    | https://www.mcmaster.com/94459A421/                   | 1 Pack |
+| 1        | ODrive Micro             | ODrive     | 89      | https://shop.odriverobotics.com/products/odrive-micro |        |
+| 4        | M3x0.5 8mm FH            | MCM        | 5.82    | https://www.mcmaster.com/91294A128/                   | 1 Pack |
+| 4        | M3x0.5 5mm FH            | MCM        | 5.57    | https://www.mcmaster.com/91294A125/                   | 1 Pack |
+| 3        | M3x0.5 10mm FH           | MCM        | 6.36    | https://www.mcmaster.com/91294A130/                   | 1 Pack |
+| 4        | M3x0.5 10mm BH           | MCM        | 7.91    | https://www.mcmaster.com/92095A182/                   | 1 Pack |
+| 5        | M4x0.7 50mm SH           | MCM        | 15.85   | https://www.mcmaster.com/91290A186/                   | 1 Pack |
+| 5        | M4x0.7 Nuts              | MCM        | 13.25   | https://www.mcmaster.com/94645A101/                   |        |
+| 1        | Diametric Encoder Magnet | MCM        | 1.48    | https://www.mcmaster.com/5862K413/                    |        |
+|          |                          |            | $206.99 |                                                       |        |
+
+Anyways, while I wait for this to be reviewed on Forge, I'm going to start doing the calculations on how I'm going to recoil the motor. To review, the motor that I have right now is wired in delta-configuration, which means that the three stator windings are connected in a closed loop that resembles a triangle. Each winding's end is connected to the other winding's beginning, making a continuous circuit. There are a couple advantages of a motor wired in delta-configuration. The main advantage of this type of winding is that it can achieve higher torque at higher speeds as opposed to star-configuration coiled motors. Although this sounds like a good thing, these motors are much less efficient at low speeds, as it draws more current for the same amount of torque. Heat generation is also increased with delta-configuration. They are ideal for high-speed applications, but for a robotic actuator, star-configuration is definitely the way to go.
+
+<img width="547" height="370" alt="image" src="https://github.com/user-attachments/assets/fd2efa8b-0a2a-4dfd-b6a8-0824a289a512" />
+
+Star configuration is different as all three stator windings are connected to a central point called the neutral point. This forms a star, or Y shape. The other ends of the windings are then connected to the motor controller. This configuration is better suited to give high effeciency at low speeds, which is why it is ideal for this application. A general rule between delta and star-configuration is that delta-configuration coiled motors have a $\sqrt{3}$x higher KV then star-configuration coiled motors.
+
+<img width="547" height="370" alt="image" src="https://github.com/user-attachments/assets/7d437aaf-3c9a-49ca-ba1d-1ce0d82d7b90" />
+
+Here's the problem: If I were to recoil the motor with the exact same turns/slot and wire awg as the manufacturer, I would get ~208 KV, which is way higher than what I'm aiming for. Luckily, the KV rating is proportional to the number of turns/slot on the motor. So I can divide $208/100$ (100 being the KV I'm aiming for) to get $2.08$.
