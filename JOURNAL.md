@@ -328,8 +328,10 @@ Anyways, while I wait for this to be reviewed on Forge, I'm going to start doing
 
 <img width="547" height="370" alt="image" src="https://github.com/user-attachments/assets/fd2efa8b-0a2a-4dfd-b6a8-0824a289a512" />
 
-Star configuration is different as all three stator windings are connected to a central point called the neutral point. This forms a star, or Y shape. The other ends of the windings are then connected to the motor controller. This configuration is better suited to give high effeciency at low speeds, which is why it is ideal for this application. A general rule between delta and star-configuration is that delta-configuration coiled motors have a $\sqrt{3}$ higher KV then star-configuration coiled motors.
+Star configuration is different as all three stator windings are connected to a central point called the neutral point. This forms a star, or Y shape. The other ends of the windings are then connected to the motor controller. This configuration is better suited to give high effeciency at low speeds, which is why it is ideal for this application. A general rule between delta and star-configuration is that delta-configuration coiled motors have a $\sqrt{3}x$ higher KV then star-configuration coiled motors.
 
 <img width="547" height="370" alt="image" src="https://github.com/user-attachments/assets/7d437aaf-3c9a-49ca-ba1d-1ce0d82d7b90" />
 
-Here's the problem: If I were to recoil the motor with the exact same turns/slot and wire awg as the manufacturer, I would get ~208 KV, which is way higher than what I'm aiming for. Luckily, the KV rating is proportional to the number of turns/slot on the motor. So I can divide $208/100$ (100 being the KV I'm aiming for) to get $2.08$.
+Here's the problem: If I were to recoil the motor with the exact same turns/slot and wire awg as the manufacturer, I would get ~208 KV, which is way higher than what I'm aiming for. Luckily, the KV rating is proportional to the number of turns/slot on the motor. So I can divide $208/100$ (100 being the KV I'm aiming for) to get $2.08$. This means that I have to use $2.08x$ the turns/slot to get to 100KV. Since the windings are layered on top of eacher other on my motor, counting the turns/slot is going to have to require taking apart the winidngs, so first, just to make my calculations more accurate, I'm going to find the actual KV of the motor to see if it's accurate or not. To do this I'm going to use the following formula:
+
+$KV=RPM/V$
