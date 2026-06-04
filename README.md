@@ -5,6 +5,8 @@ A small and cheap quasi-direct driven planetary robotic actuator. It uses an 8:1
 
 This is not the first actuator that I have made, and it certainly won't be the last either. I was aiming to design something small and cheap that could still have a decent amount of power. In order to do this, I have to recoil a small motor that is intended to be used for drones to be more optimal for high load applications.
 
+If you are interested in building this yourself, the BOM below is a good starting place for getting materials, but anything will similar specifications will work just as well. You can download the CAD files either directly from the Onshape document (below) or from the files listed in the CAD folder.
+
 [CAD](https://cad.onshape.com/documents/57a8ef0242364670953218e9/w/659145295f694f0fa79f9cef/e/7b9566cf06dc05a88ad73bb1)
 
 # BOM
@@ -25,4 +27,4 @@ This is not the first actuator that I have made, and it certainly won't be the l
 | 5        | M4x0.7 Nuts           | MCM        | 13.25   | https://www.mcmaster.com/94645A101/                   |        |
 |          |                       |            | $205.51 |                                                       |        |
 
-NOTE: It's mainly expensive because a lot of the fastners come in packs with way more of the item then is needed, without counting fasteners, it's $143.65.
+NOTE: A bulk of the price is because a lot of the fastners come in packs with way more of the item then is needed.
