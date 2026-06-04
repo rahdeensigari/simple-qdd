@@ -328,7 +328,7 @@ Anyways, while I wait for this to be reviewed on Forge, I'm going to start doing
 
 <img width="547" height="370" alt="image" src="https://github.com/user-attachments/assets/fd2efa8b-0a2a-4dfd-b6a8-0824a289a512" />
 
-Star configuration is different as all three stator windings are connected to a central point called the neutral point. This forms a star, or Y shape. The other ends of the windings are then connected to the motor controller. This configuration is better suited to give high effeciency at low speeds, which is why it is ideal for this application. A general rule between delta and star-configuration is that delta-configuration coiled motors have a $\sqrt{3}$x higher KV then star-configuration coiled motors.
+Star configuration is different as all three stator windings are connected to a central point called the neutral point. This forms a star, or Y shape. The other ends of the windings are then connected to the motor controller. This configuration is better suited to give high effeciency at low speeds, which is why it is ideal for this application. A general rule between delta and star-configuration is that delta-configuration coiled motors have a $\sqrt{3}$ higher KV then star-configuration coiled motors.
 
 <img width="547" height="370" alt="image" src="https://github.com/user-attachments/assets/7d437aaf-3c9a-49ca-ba1d-1ce0d82d7b90" />
 
