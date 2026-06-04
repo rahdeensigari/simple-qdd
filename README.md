@@ -5,7 +5,7 @@ A small and cheap quasi-direct driven planetary robotic actuator. It uses an 8:1
 
 This is not the first actuator that I have made, and it certainly won't be the last either. I was aiming to design something small and cheap that could still have a decent amount of power. In order to do this, I have to recoil a small motor that is intended to be used for drones to be more optimal for high load applications.
 
-Link: https://cad.onshape.com/documents/57a8ef0242364670953218e9/w/659145295f694f0fa79f9cef/e/7b9566cf06dc05a88ad73bb1?renderMode=0&uiState=6a20d2e02ca023c6aa17c062
+[Link](https://cad.onshape.com/documents/57a8ef0242364670953218e9/w/659145295f694f0fa79f9cef/e/7b9566cf06dc05a88ad73bb1?renderMode=0&uiState=6a20d2e02ca023c6aa17c062)
 
 # BOM
 
