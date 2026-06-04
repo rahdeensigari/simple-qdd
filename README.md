@@ -1,5 +1,5 @@
 # simple-qdd
-A small and cheap quasi-direct driven planetary robotic actuator. It uses an 8:1 planetary reduction powered by a 5010 BLDC drone motor recoiled in star configuration to get ~90KV.
+A small and cheap quasi-direct driven planetary robotic actuator. It uses an 8:1 planetary reduction powered by a 5010 BLDC drone motor recoiled in star configuration to get ~100KV.
 
 <img width="918" height="920" alt="image" src="https://github.com/user-attachments/assets/bf0173b0-e8c6-4c8c-b125-4ede10e62771" />
 
