@@ -335,3 +335,50 @@ Star configuration is different as all three stator windings are connected to a 
 Here's the problem: If I were to recoil the motor with the exact same turns/slot and wire awg as the manufacturer, I would get ~208 KV, which is way higher than what I'm aiming for. Luckily, the KV rating is proportional to the number of turns/slot on the motor. So I can divide $208/100$ (100 being the KV I'm aiming for) to get $2.08$. This means that I have to use $2.08x$ the turns/slot to get to 100KV. Since the windings are layered on top of eacher other on my motor, counting the turns/slot is going to have to require taking apart the winidngs, so first, just to make my calculations more accurate, I'm going to find the actual KV of the motor to see if it's accurate or not. To do this I'm going to use the following formula:
 
 $KV=RPM/V$
+
+Normally you would use something like a lathe or a drill for this, but I don't have access to anything like that so I'm just going to use the motor from my old actuator. I had this old test mount laying around that I'll use:
+
+<img width="3072" height="4080" alt="image" src="https://github.com/user-attachments/assets/27411fe2-7060-4c9f-a6ee-2c38d289468d" />
+
+Then I wrote this quick script to set the motor to a desired RPM:
+
+```python
+import odrive
+import time
+
+from odrive.enums import *
+
+odrv = odrive.find_any()
+axis = odrv.axis0
+
+axis.controller.config.control_mode = ControlMode.VELOCITY_CONTROL
+axis.controller.config.input_mode = InputMode.PASSTHROUGH
+axis.requested_state = AxisState.CLOSED_LOOP_CONTROL
+
+axis.controller.config.vel_limit = 30.0
+
+time.sleep(0.5)
+
+def set_rpm(axis, rpm):
+    turns_per_sec = rpm / 60.0
+    axis.controller.input_vel = turns_per_sec
+
+def get_actual_rpm(axis):
+    turns_per_sec = axis.pos_vel_mapper.vel
+    return turns_per_sec * 60.0
+
+set_rpm(axis, 500)
+
+try:
+    while True:
+        print(f"Target: {axis.controller.input_vel * 60:.1f} RPM | "
+            f"Actual: {get_actual_rpm(axis):.1f} RPM")
+        time.sleep(0.1)
+
+finally:
+    print("Stopping motor...")
+    axis.controller.input_vel = 0.0
+    time.sleep(0.5)
+    axis.requested_state = AxisState.IDLE
+    print("Motor Stopped")
+```
