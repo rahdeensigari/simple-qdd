@@ -336,7 +336,7 @@ Here's the problem: If I were to recoil the motor with the exact same turns/slot
 
 $KV=RPM/(V*\sqrt{3})$
 
-Normally you would use something like a lathe or a drill for this, but I don't have access to anything like that so I'm just going to use the motor from my old actuator. I had this old test mount laying around that I'll use:
+I'm multiplying the voltage by $\sqrt{3}$ because the motor is currently coiled in delta configuration. Normally you would use something like a lathe or a drill for this, but I don't have access to anything like that so I'm just going to use the motor from my old actuator. I had this old test mount laying around that I'll use:
 
 <img width="3072" height="4080" alt="image" src="https://github.com/user-attachments/assets/27411fe2-7060-4c9f-a6ee-2c38d289468d" />
 
@@ -383,7 +383,7 @@ finally:
     print("Motor Stopped")
 ```
 
-Alright I'm going to be honest I restarted my computer and lost 3 hours of progress on the journal... So if the following stuff I write isn't as detailed that's why.
+Alright I'm going to be honest I restarted my computer and lost an hour of progress on the journal... So if the following stuff I write isn't as detailed that's why.
 
 I'll quickly go over how the script works:
 
@@ -399,8 +399,76 @@ axis = odrv.axis0
 axis.controller.config.control_mode = ControlMode.VELOCITY_CONTROL
 axis.controller.config.input_mode = InputMode.PASSTHROUGH
 axis.requested_state = AxisState.CLOSED_LOOP_CONTROL
+
+axis.controller.config.vel_limit = 30.0
 ```
 
-This block is the setup. I'm importing the ODrive pip module and time, then importing all the enums from the module. Then, I'm searching to see if any ODrive boards and connected and assigning the motor to axis0. In the last 3 lines, I'm setting the control mode to velocity, the input mode to passthrough, which allows me to control it directly, and setting the axis state to closed loop control
+This block is the setup. I'm importing the ODrive pip module and time, then importing all the enums from the module. Then, I'm searching to see if any ODrive boards and connected and assigning the motor to axis0. In the last 3 lines, I'm setting the control mode to velocity, the input mode to passthrough, which allows me to control it directly, and setting the axis state to closed loop control. I also set the velocity limit to 30 because by default it was capping me to 600 rpm. I'm pretty sure after you run this once, you don't need that line anymore but I kept it just incase.
 
-**Total Time Spent: 2.78 hours**
+```python
+time.sleep(0.5)
+
+def set_rpm(axis, rpm):
+    turns_per_sec = rpm / 60.0
+    axis.controller.input_vel = turns_per_sec
+
+def get_actual_rpm(axis):
+    turns_per_sec = axis.pos_vel_mapper.vel
+    return turns_per_sec * 60.0
+
+set_rpm(axis, 500)
+```
+
+The time.sleep is to give me a second before the motor start spinning. I defined two functions next, one to set the rpm that the motor will be rotating at. I have to divide by 60 because ODrive doesn't handle velocity in RPM. I'm then setting the input velocity to that new value. The get_actual_rpm function gets the encoder reading of the motor. This is to detect if there are any great disparities between the value I set and the actual RPM. I then set the RPM of the motor using the set_rpm function.
+
+```python
+try:
+    while True:
+        print(f"Target: {axis.controller.input_vel * 60:.1f} RPM | "
+            f"Actual: {get_actual_rpm(axis):.1f} RPM")
+        time.sleep(0.1)
+
+finally:
+    print("Stopping motor...")
+    axis.controller.input_vel = 0.0
+    time.sleep(0.5)
+    axis.requested_state = AxisState.IDLE
+    print("Motor Stopped")
+```
+
+This final block constantly prints the RPM I set the motor to run at and the actual RPM that the encoder detects. It's in a try-finally block because the ODrive module doesn't have a way to deal with the script being terminated by default. Honestly I didn't really need to write a script for this, I could've just used the GUI, but I needed to learn how to code for ODrive anyways so I don't mind.
+
+I quickly modelled an adapter and test stand in CAD that allows me to connect the LA8308 (the golden motor) to the 5010 so I can test the KV. The prongs on the adapters catch each other and rotate:
+
+<img width="971" height="785" alt="image" src="https://github.com/user-attachments/assets/2310f6e2-6cb2-4cfa-b660-2f7452abfdf5" />
+<img width="908" height="674" alt="image" src="https://github.com/user-attachments/assets/dbee38c9-2424-4e95-9751-c47e28276718" />
+
+This is full setup with everything printed:
+
+<img width="3072" height="4080" alt="image" src="https://github.com/user-attachments/assets/13580380-e411-40a3-b2c7-6b29bed7f2cc" />
+
+I was kind of confused at first when I initally ran the motor because I had the multimeter on detecting DC current, so it was just reading 0, but after some reaearch I realized what I did wrong so I switched the multimeter to AC and tried getting readings. I tried running the motor at different RPM's to see if the results varied. Here are the results. I tried every combination of phase wires to get the most accurate result.
+
+1000 RPM
+- 1: 1.7V
+- 2: 1.7V
+- 3: 1.7V
+
+500 RPM
+- 1: 0.7V
+- 2: 0.7V
+- 3: 0.7V
+
+1500 RPM
+- 1: 2.7V
+- 2: 2.7V
+- 3: 2.7V
+
+Here is the KV rating I calculated for each speed:
+- 1000 RPM: 340 KV
+- 500 RPM: 413 KV
+- 1500 RPM: 320 KV
+
+There's a huge difference between the values, especially at 500 RPM. This might be because it's just too slow, so I'm going to delete that data point and try again at 2000 RPM. I got 3.1V all around using 2000 RPM, which translates to 372 KV. Still a bigger difference then I would have liked, but it's not as bad anymore. Taking the average of all three values gives me 344, so not exactly 360 as the manufacturer listed. I'll be using this value for my future calculations. Now that I have the actual KV of the motor, I can go ahead with starting to take it apart.
+
+**Total Time Spent: 3.65 hours**
