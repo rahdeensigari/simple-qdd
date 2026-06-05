@@ -334,7 +334,7 @@ Star configuration is different as all three stator windings are connected to a 
 
 Here's the problem: If I were to recoil the motor with the exact same turns/slot and wire awg as the manufacturer, I would get ~208 KV, which is way higher than what I'm aiming for. Luckily, the KV rating is proportional to the number of turns/slot on the motor. So I can divide $208/100$ (100 being the KV I'm aiming for) to get $2.08$. This means that I have to use $2.08x$ the turns/slot to get to 100KV. Since the windings are layered on top of eacher other on my motor, counting the turns/slot is going to have to require taking apart the winidngs, so first, just to make my calculations more accurate, I'm going to find the actual KV of the motor to see if it's accurate or not. To do this I'm going to use the following formula:
 
-$KV=RPM/V$
+$KV=RPM/(V*\sqrt{3})$
 
 Normally you would use something like a lathe or a drill for this, but I don't have access to anything like that so I'm just going to use the motor from my old actuator. I had this old test mount laying around that I'll use:
 
@@ -382,3 +382,25 @@ finally:
     axis.requested_state = AxisState.IDLE
     print("Motor Stopped")
 ```
+
+Alright I'm going to be honest I restarted my computer and lost 3 hours of progress on the journal... So if the following stuff I write isn't as detailed that's why.
+
+I'll quickly go over how the script works:
+
+```python
+import odrive
+import time
+
+from odrive.enums import *
+
+odrv = odrive.find_any()
+axis = odrv.axis0
+
+axis.controller.config.control_mode = ControlMode.VELOCITY_CONTROL
+axis.controller.config.input_mode = InputMode.PASSTHROUGH
+axis.requested_state = AxisState.CLOSED_LOOP_CONTROL
+```
+
+This block is the setup. I'm importing the ODrive pip module and time, then importing all the enums from the module. Then, I'm searching to see if any ODrive boards and connected and assigning the motor to axis0. In the last 3 lines, I'm setting the control mode to velocity, the input mode to passthrough, which allows me to control it directly, and setting the axis state to closed loop control
+
+**Total Time Spent: 2.78 hours**
