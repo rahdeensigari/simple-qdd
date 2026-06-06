@@ -495,7 +495,7 @@ $1.99*23=45.8$
 
 **Total Time Spent: 0.35 hour**
 
-# June 6 - Recoiling Attempt #1
+# June 6 - Recoiling Attempt #1 + CAD Fixes
 
 I got some cheap 24 AWG magnet wire today, and I tried to recoil the motor using the following diagram:
 
