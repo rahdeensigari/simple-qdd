@@ -472,3 +472,25 @@ Here is the KV rating I calculated for each speed:
 There's a huge difference between the values, especially at 500 RPM. This might be because it's just too slow, so I'm going to delete that data point and try again at 2000 RPM. I got 3.1V all around using 2000 RPM, which translates to 372 KV. Still a bigger difference then I would have liked, but it's not as bad anymore. Taking the average of all three values gives me 344, so not exactly 360 as the manufacturer listed. I'll be using this value for my future calculations. Now that I have the actual KV of the motor, I can go ahead with starting to take it apart.
 
 **Total Time Spent: 3.65 hours**
+
+# June 5 - Recoiling Calculations + Uncoiling Motor
+
+Alright, so I completely uncoiled the motor:
+
+<img width="1440" height="1920" alt="image" src="https://github.com/user-attachments/assets/87080701-4d57-4709-a27e-9e7076a80c61" />
+
+As I was uncoiling it, I counted the amount of turns-per-slot and got 23. Since the KV of the motor is proportional to the turns-per-slot, I can now calculate how many I need to get 100KV:
+
+First I need to account for the motor being in delta configuration:
+
+$344/\sqrt{3}=199$
+
+Then, If I divide that by the KV I want, I get the ratio of how many times more windings I need to get to my desired KV rating:
+
+$199/100=1.99$
+
+$1.99*23=45.8$
+
+45.8 then rounds up to **46**, the turns-per-slot necessary.
+
+**Total Time Spent: 0.35 hours**
