@@ -493,4 +493,14 @@ $1.99*23=45.8$
 
 45.8 then rounds up to **46**, the turns-per-slot necessary.
 
-**Total Time Spent: 0.35 hours**
+**Total Time Spent: 0.35 hour**
+
+# June 6 - Recoiling Attempt #1
+
+I got some cheap 24 AWG magnet wire today, and I tried to recoil the motor using the following diagram:
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/7de5af0d-3ea9-4697-90b7-8b63170e9711" />
+
+However, I believe that 24 AWG is too large of a diameter, so I am going to return the spool I got and try 26 AWG instead.
+
+**Total Time Spent: 0.5 hour**
