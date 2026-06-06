@@ -503,4 +503,14 @@ I got some cheap 24 AWG magnet wire today, and I tried to recoil the motor using
 
 However, I believe that 24 AWG is too large of a diameter, so I am going to return the spool I got and try 26 AWG instead.
 
-**Total Time Spent: 0.5 hour**
+Also, I got some feedback on my design and have a couple changes to make. First, with the current design I can straight up just pull the output disc and the entire gear system will disengage from the main bearing. To fix this, I'm going to add a flange underneath the bearing as well secured by a plastic threading screw.
+
+<img width="558" height="451" alt="image" src="https://github.com/user-attachments/assets/8c6f9daa-2904-4fd1-b6c6-159e79f93df0" />
+
+Here's it implemented:
+
+<img width="661" height="468" alt="image" src="https://github.com/user-attachments/assets/12555627-a171-48ad-8833-1e9d24a06951" />
+
+I decided to not use plastic tapping screws and just use regular screws and heat set inserts as it would be cheaper.
+
+**Total Time Spent: 1.28 hour**
