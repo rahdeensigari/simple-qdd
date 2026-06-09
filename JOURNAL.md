@@ -513,4 +513,15 @@ Here's it implemented:
 
 I decided to not use plastic tapping screws and just use regular screws and heat set inserts as it would be cheaper.
 
-**Total Time Spent: 1.28 hour**
+**Total Time Spent: 1.28 hours**
+
+# June 8 - Rewinding Attempt 2
+
+May god help me because this is the most painful process of all time. Obviously I couldn't record journal entries as I was winding the motor, but I basically tried the same thing as before except with 26 AWG wire instead. The good news is that I can actually fit 46 windings in one slot, the bad news is that it was extremely messy and extremely difficult to wind, especially if I was winding a slot that already had another fully winded one right next to it. I technically got an entire phase wired, but I am very unhappy with the result, and I am most likely going to unwind it again. Another possible idea I have is to take out the center bearing stack by heating the adhesive holding it and the stator together. This will making rewinding the stator much easier. Here a couple photos I took of the rewinding process:
+
+<img width="3072" height="4080" alt="image" src="https://github.com/user-attachments/assets/20424bfa-163e-4384-92d2-a59dacfda161" />
+<img width="1440" height="1920" alt="image" src="https://github.com/user-attachments/assets/7cfc3387-7f18-4202-a3fc-44c65cde49cf" />
+<img width="3072" height="4096" alt="image" src="https://github.com/user-attachments/assets/824162c7-ab4f-483c-bff1-1efb6a12b4d7" />
+<img width="3072" height="4096" alt="image" src="https://github.com/user-attachments/assets/12d132de-f432-445c-912a-c8b3328d22b6" />
+
+# Total Time Spent: 1.73 hours**
