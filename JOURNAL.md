@@ -524,4 +524,15 @@ May god help me because this is the most painful process of all time. Obviously 
 <img width="3072" height="4096" alt="image" src="https://github.com/user-attachments/assets/824162c7-ab4f-483c-bff1-1efb6a12b4d7" />
 <img width="3072" height="4096" alt="image" src="https://github.com/user-attachments/assets/12d132de-f432-445c-912a-c8b3328d22b6" />
 
-# Total Time Spent: 1.73 hours**
+**Total Time Spent: 1.73 hours**
+
+# June 9 - Exploded View
+
+The project got returned because I didn't have any assembly instructions, so I'm just going to really quickly make an exploded view showing how everything fits together. Here it is, as well as a section view:
+
+<img width="2547" height="3296" alt="Main (1)" src="https://github.com/user-attachments/assets/8fc12cbd-7c90-4177-94e5-91cc75c8d9e6" />
+<img width="995" height="768" alt="image" src="https://github.com/user-attachments/assets/3cdc2b9a-e6ae-4388-b9ff-c024f0f2d442" />
+
+I'm also going to add them to the README and add a quick paragraph laying out some important points. I also updated the CAD folder with the new step files.
+
+**Total Time Spent: 0.55 hours**
