@@ -536,3 +536,11 @@ The project got returned because I didn't have any assembly instructions, so I'm
 I'm also going to add them to the README and add a quick paragraph laying out some important points. I also updated the CAD folder with the new step files.
 
 **Total Time Spent: 0.55 hours**
+
+# June 19 - Added full STEP file + Updated BOM
+
+Project got returned because I didn't have a full STEP file of the assembly included. I added it as Main.step in the cad folder. Also, because of some earlier changes I made, the retention bolts were too short so I had to up their length to 55mm. I then updated the BOM to reflect that change.
+
+<img width="436" height="501" alt="image" src="https://github.com/user-attachments/assets/8fcc6b1e-2d0e-4626-b85c-a049f0b587df" />
+
+**Total Time Spent: 0.1 hours**
