@@ -544,3 +544,13 @@ Project got returned because I didn't have a full STEP file of the assembly incl
 <img width="436" height="501" alt="image" src="https://github.com/user-attachments/assets/8fcc6b1e-2d0e-4626-b85c-a049f0b587df" />
 
 **Total Time Spent: 0.1 hours**
+
+# July 4 - Recoiling Work
+
+Alright, I'm back to work on this after forever! So, here's what I'm going to do. Right now, 46 turns is essentially impossible to get on the motor stator, so, unfortunately, I am going to have to settle for less turns. Instead of trying to go for 100KV, I'm instead going to settle with 150KV. Doing the calcuations again, I need around 31 turns per slot to achieve this. With that in mind, I tried recoiling one phase of the stator. It was still slightly difficult and I had to redo some individual slots a couple times but I eventually got this:
+
+<img width="3072" height="4080" alt="image" src="https://github.com/user-attachments/assets/6668096f-054f-42fa-9d60-89cecaa7a2e1" />
+
+As you can see, I slightly messed up which stator slot I had to route on the last two, but it proved regardless that 31 turns were much easier to route than 46. Luckily, I was going to recoil at least the last slot anyways so it wasn't too big of a deal. I'm going to fix the mistake and continue recoiling tommorow hopefully.
+
+**Total Time Spent: 1 hour**
