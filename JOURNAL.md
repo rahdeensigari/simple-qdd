@@ -554,3 +554,9 @@ Alright, I'm back to work on this after forever! So, here's what I'm going to do
 As you can see, I slightly messed up which stator slot I had to route on the last two, but it proved regardless that 31 turns were much easier to route than 46. Luckily, I was going to recoil at least the last slot anyways so it wasn't too big of a deal. I'm going to fix the mistake and continue recoiling tommorow hopefully.
 
 **Total Time Spent: 1 hour**
+
+# July 21 - Clarification for Reviewers
+
+Hello, someone dm'd me on slack about this so I just want to clear it up here. Look at the PDF BOM in the docs folder please, not the CSV or the one in the readme. The parts highlighted (so just the motor for now, and potentially the ODrive if that's not applicable for funding) do **NOT** need funding, I already have the motor, as I needed to buy it beforehand to actually get the dimensions for the CAD model.
+
+**Total Time Spent: 0 hours**
