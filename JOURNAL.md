@@ -560,3 +560,26 @@ As you can see, I slightly messed up which stator slot I had to route on the las
 Hello, someone dm'd me on slack about this so I just want to clear it up here. Look at the PDF BOM in the docs folder please, not the CSV or the one in the readme. The parts highlighted (so just the motor for now, and potentially the ODrive if that's not applicable for funding) do **NOT** need funding, I already have the motor, as I needed to buy it beforehand to actually get the dimensions for the CAD model.
 
 **Total Time Spent: 0 hours**
+
+# July 23 - Starting to Build
+
+I got my grant yesterday and ordered all of my parts. McMaster-Carr has extremely fast shipping so all of the parts from them already arrived!
+
+<img width="4080" height="3072" alt="image" src="https://github.com/user-attachments/assets/36c4ea74-a07d-46c8-8ead-0772e30231b6" />
+
+If you remember, I already have all the parts printed, so I just immediately started the build. First, I put the needle bearing in the gears. The clearance was nice, so they fit in perfectly:
+
+<img width="3072" height="4080" alt="image" src="https://github.com/user-attachments/assets/97154cc1-a448-4aad-b6b0-1ad16ca06eec" />
+
+Next, I'm going to use my soldering iron to put all the heat-set inserts in. I encountered a pretty big problem while doing this, my heat-set insert tip on my soldering iron is very dirty, so dirty that melted plastic that it caught would get stuck in the threads of the heat-set inserts, basically making them useless. Luckily, I have an M3 tap so I literally just retapped the heat-sets, it's kinda rough but it should do. I am also going to reprint and re heat-set the output disk in white.
+
+<img width="4080" height="3072" alt="image" src="https://github.com/user-attachments/assets/d7862cb1-8339-467f-b7fa-6d04bdd0468c" />
+
+One more thing, there's a lot of play between the needle bearings and the internal shaft on the carriage, so I think I'm going to reprint that as well. I'm honestly just going to make that white PLA as well, I doubt that needs to be PETG-CF. As you can see, I originally subracted 0.005" so that it would fit, but this was clearly unnecessary.
+
+<img width="209" height="48" alt="image" src="https://github.com/user-attachments/assets/98d15109-1c67-43e6-88a7-35b9112bb129" />
+
+I'll write a new journal entry once everything gets printed.
+
+**Total Time Spent: 1.1 Hours**
+
