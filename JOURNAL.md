@@ -583,3 +583,24 @@ I'll write a new journal entry once everything gets printed.
 
 **Total Time Spent: 1.1 Hours**
 
+# July 24 - Change to Gears + Assembly
+
+Alright, so this change was from yesterday but I didn't record it, but I added a little base to the planet gears to help retain the bearings in place, as the bearings were actually slightly shorter than the gears.
+
+<img width="947" height="834" alt="image" src="https://github.com/user-attachments/assets/78512a3f-578f-4002-bfa6-8b74df0d7fab" />
+
+With this change and all the ones from yesterday, I printed all of the parts, the gears out of PETG-CF, and the carriage and output disk out of white PLA. Then, I added heat-set inserts to all the parts that needed them and put the needle bearings into the new planet gears. Taking out the needle bearings out of the old gears was quite difficult, as they were retained very well in place, but I eventually had the idea to heat up my 3D printers bed to loosen the filament and push them out.
+
+<img width="4080" height="3072" alt="image" src="https://github.com/user-attachments/assets/5dda306c-b10d-4be1-b22d-486f1cf77d03" />
+
+I also assembled the carriage with the parts that I had available. Everything rotated decently smoothly, but it will be even better with some white lithium which I will put on during the final assembly.
+
+<img width="3072" height="4080" alt="image" src="https://github.com/user-attachments/assets/e18c2216-56f4-48b0-aa3c-320d71d7e885" />
+
+And for good measure, I assembled the entire shell together.
+
+<img width="3072" height="4080" alt="image" src="https://github.com/user-attachments/assets/90c038e2-9abd-4b60-a356-48e0393fec91" />
+
+I also updated the github repo with these parts. All that's left to do now is finish rewinding the motor and wait for the other parts to arrive.
+
+**Total Time Spent: 1.22 Hours**
