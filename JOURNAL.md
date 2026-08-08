@@ -1,4 +1,4 @@
-<img width="1068" height="1011" alt="image" src="https://github.com/user-attachments/assets/f429d06f-565c-44be-ba92-d4482c17a77d" />---
+<img width="4080" height="3072" alt="image" src="https://github.com/user-attachments/assets/5c9308e0-3f77-43f8-aad4-06bc9fee7d68" /><img width="1068" height="1011" alt="image" src="https://github.com/user-attachments/assets/f429d06f-565c-44be-ba92-d4482c17a77d" />---
 title: "Quasi-Direct Drive Actuator"
 author: "Rahdeen Sigari"
 description: "A small and cheap quasi-direct driven planetary robotic actuator."
@@ -604,3 +604,36 @@ And for good measure, I assembled the entire shell together.
 I also updated the github repo with these parts. All that's left to do now is finish rewinding the motor and wait for the other parts to arrive.
 
 **Total Time Spent: 1.22 Hours**
+
+# August 7 - Bearings arrived, carriage changes, recoiling
+
+I forgot to journal most of this stuff earlier so a quick overview of what happened:
+
+First, my bearings came!
+
+<img width="3072" height="4080" alt="image" src="https://github.com/user-attachments/assets/3311ec44-cc62-4471-a756-899ac9a742db" />
+
+Here's the problem: Currently in the CAD I have a slight clearance fit between the gear carriage and the bearing itself. This was done to account for 3D print inaccuracy and tolerances, however I am willing to bet that the bearing was manufactured with unilateral negative tolerances. To fix this, I am going to change the fit of the carriage to be a slight interference fit instead of clearance. I went ahead and printed it out as well. While I'm waiting for it to finish printing, I'm going to try to recoil the stator again. I've been putting this off for a while because of how annoying of a process it is, but I think I just have to bite the bullet and get it done with. Last time I tried to recoil the stator, I accidently coiled the wrong stator slots on one side, so first, I need to redo those two slots:
+
+<img width="3072" height="4080" alt="image" src="https://github.com/user-attachments/assets/3e40b48e-6eae-4867-b81c-804559bde2b7" />
+
+From there on it went pretty smoothly. Here's the second phase:
+
+<img width="3072" height="4080" alt="image" src="https://github.com/user-attachments/assets/da94ee10-1348-4baf-8eaa-9cf44e7005ad" />
+
+And finally the third:
+
+<img width="3072" height="4080" alt="image" src="https://github.com/user-attachments/assets/d74ddecc-f388-4ce9-827d-20908fe6e7e2" />
+
+Once all the phases were coiled, I soldered all their ends together at one central star point (since this is now in star configuration):
+
+<img width="3072" height="4080" alt="image" src="https://github.com/user-attachments/assets/d690a989-558c-4352-b47b-6ff70db22d52" />
+
+Then I soldered all my wires on and wrapped them in heatshrink:
+
+<img width="4080" height="3072" alt="image" src="https://github.com/user-attachments/assets/c06a4a02-4cf9-4abd-8c33-7a69d2d4fe4c" />
+<img width="4080" height="3072" alt="image" src="https://github.com/user-attachments/assets/a92a7be7-d581-42d4-80e0-8975514bc1a2" />
+
+After this, I connected the motor to my old ODrive S1 like I did earlier. For some reason, I am getting the error "PHASE_RESISTANCE_OUT_OF_RANGE" when I try to calibrate the motor. I'm really tired right now so I'll pick up trying to fix this tomorrow.
+
+**Total Time Spent: 2.9 Hours**
