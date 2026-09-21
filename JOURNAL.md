@@ -1,4 +1,4 @@
-<img width="4080" height="3072" alt="image" src="https://github.com/user-attachments/assets/5c9308e0-3f77-43f8-aad4-06bc9fee7d68" /><img width="1068" height="1011" alt="image" src="https://github.com/user-attachments/assets/f429d06f-565c-44be-ba92-d4482c17a77d" />---
+<img width="1440" height="1920" alt="image" src="https://github.com/user-attachments/assets/aa75c2b4-1c62-4401-991a-daaa71289b4d" /><img width="3072" height="4080" alt="image" src="https://github.com/user-attachments/assets/004b6a84-fc29-4108-bfc8-6800eb628bdf" /><img width="4080" height="3072" alt="image" src="https://github.com/user-attachments/assets/5c9308e0-3f77-43f8-aad4-06bc9fee7d68" /><img width="1068" height="1011" alt="image" src="https://github.com/user-attachments/assets/f429d06f-565c-44be-ba92-d4482c17a77d" />---
 title: "Quasi-Direct Drive Actuator"
 author: "Rahdeen Sigari"
 description: "A small and cheap quasi-direct driven planetary robotic actuator."
@@ -637,3 +637,106 @@ Then I soldered all my wires on and wrapped them in heatshrink:
 After this, I connected the motor to my old ODrive S1 like I did earlier. For some reason, I am getting the error "PHASE_RESISTANCE_OUT_OF_RANGE" when I try to calibrate the motor. I'm really tired right now so I'll pick up trying to fix this tomorrow.
 
 **Total Time Spent: 2.9 Hours**
+
+# September 20 - CAD Changes
+
+It's been a while since I've worked on this, but it seems like for some reason a lot of my journal entries are gone? A lot of stuff happened after the last journal entry, so I'm just going to quickly go over everything. The error from the last entry was fixed through some changes in the ODrive settings, and with those settings changed, everything worked fine (I believe I changed the phase resistance value in ODrive configuration to a value that I measured, but again this happened a while ago so I don't quite remember). After I got the motor to work, I tried to assemble everything, here are a couple photos:
+
+<img width="3072" height="4080" alt="image" src="https://github.com/user-attachments/assets/2ea8f35e-3dad-4318-8c97-03b9863b0680" />
+<img width="3072" height="4080" alt="image" src="https://github.com/user-attachments/assets/8d9b6fba-ff9f-4223-a2c5-eaf6c1e7f5f6" />
+<img width="3072" height="4080" alt="image" src="https://github.com/user-attachments/assets/a034be29-d47a-42cf-8cf2-6af5f57c9b46" />
+<img width="3072" height="4080" alt="image" src="https://github.com/user-attachments/assets/0a3419a5-e8ab-4a37-ab46-92801f481915" />
+
+When I tried backdriving the actuator after assembling it, the sun gear actually snapped from the base and there was way more friction then I anticipated:
+
+<img width="3072" height="4080" alt="image" src="https://github.com/user-attachments/assets/6100e6d4-ba72-4596-83ea-a6617e4b4b0a" />
+
+I believe this happened because I didn't account for the axial thrust force that helical gears generate. I'm going to fix this today by switching to either spur or herringbone gears. I also got my design review by a couple of people and I have a general idea of some other changes that I want to make.
+
+The first thing I did was to make all of the gears spur gears. I started with the sun gear, and this was pretty straightforward. Having it be a spur gear also made making the cutouts for the screws much easier:
+
+<img width="920" height="860" alt="image" src="https://github.com/user-attachments/assets/40671daa-c1bd-4838-b413-5029815fb1e8" />
+
+The bad thing was that this broke a LOT of my features, but most of these were just changing the reference:
+
+<img width="233" height="675" alt="image" src="https://github.com/user-attachments/assets/54e17d0c-e251-4cba-ac89-3d41dd664034" />
+
+The other gears were also really straightforward, nothing really noteworthy except for having to change more references:
+
+<img width="1640" height="980" alt="image" src="https://github.com/user-attachments/assets/15ba90a3-8adc-4779-ae6e-52001d7e4b85" />
+
+I also had to update the assemblies to match:
+
+<img width="1235" height="1027" alt="image" src="https://github.com/user-attachments/assets/937c671e-b9b0-45bf-b3c0-f6265841c43b" />
+
+The next issue was that there was no clearance between the planet gears and the output disk:
+
+<img width="2260" height="1351" alt="image" src="https://github.com/user-attachments/assets/d4283913-5e5c-4204-8ac6-f7fb959a3630" />
+
+I was initially going to print separate washers entirely to space them apart, but instead I decided on a different approach and just added spacers fused to the bottom of the output disk:
+
+<img width="1076" height="850" alt="image" src="https://github.com/user-attachments/assets/4179c811-de90-411f-ab4a-f899dafdabdd" />
+<img width="1400" height="811" alt="image" src="https://github.com/user-attachments/assets/951d7e00-9ae3-48a4-aa67-28cfb50fb8f4" />
+
+I also went ahead and beefed up the base of the sun gear with some extra material:
+
+<img width="585" height="594" alt="image" src="https://github.com/user-attachments/assets/1910fea7-5acd-44e8-a795-9626ae034a8f" />
+
+Honestly, that's all the changes that I can realistically make while still staying in scope. There's a lot of stuff that I want to change but can't quite do right now, but I will certainly keep in mind when designing another actuator like this in the future (credit to BitSentinel and Eliot):
+
+- An output bearing at the top of the actuator as well as one for the carriage.
+- Using a bigger motor controller like I planned on doing before.
+- Heatsinking for the motor controllers and the motor.
+- Needle bearings must be rolling on a hardened steel shaft, not a 3D print or even an aluminum part.
+
+For now though, I think these changes will be sufficient. I'm going to go ahead and print out all of the changed parts.
+
+First, the output disk. I'm printing this first because I already have white filament loaded on my printer. I'm going to be using 5 walls, 30% gyroid infill for this part and print it out of basic PLA:
+
+<img width="833" height="629" alt="image" src="https://github.com/user-attachments/assets/d5db1b78-0ae6-412f-b566-4f6d8f16f94a" />
+<img width="3072" height="4080" alt="image" src="https://github.com/user-attachments/assets/3494d364-11bf-40f5-bacd-afa75432ea51" />
+
+Next, I printed all of the changed gears. I'm also going to be printing these with 5 walls, 30% gyroid out of PETG-CF:
+
+<img width="1470" height="1181" alt="image" src="https://github.com/user-attachments/assets/4397b659-36fe-401f-9fb9-ba3e931c5d4f" />
+(I printed the other two gears later)
+
+I also went ahead and added heatsets to the output disk while I was waiting for everything else to print:
+
+<img width="3072" height="4080" alt="image" src="https://github.com/user-attachments/assets/0c3b6bc4-f26a-43e7-9e3e-c56aa17e1f6d" />
+
+Once everything printed, I first started by putting on the new sun gear. One of the bolts didn't align for some reason? But it works fine so I don't care too much:
+
+<img width="3072" height="4080" alt="image" src="https://github.com/user-attachments/assets/9d5b1865-864a-4793-a257-e0d1da879dc2" />
+
+Then, I bolted the motor into the body of the actuator:
+
+<img width="1440" height="1920" alt="image" src="https://github.com/user-attachments/assets/26ba9623-cb49-40f1-b43a-9e446892d127" />
+
+And assembled the carriage:
+
+<img width="1440" height="1920" alt="image" src="https://github.com/user-attachments/assets/989670b7-7568-46b0-8f7a-3fa08d262502" />
+<img width="1440" height="1920" alt="image" src="https://github.com/user-attachments/assets/dddaffa2-1ccc-47a7-b946-d040a4e0f959" />
+<img width="1440" height="1920" alt="image" src="https://github.com/user-attachments/assets/8136b535-1c67-4964-9e03-6bcec5520338" />
+
+I then proceeded to add the needle bearing carriers to the new gears. Getting these on were a pain, I literally had to use the bottom of a water bottle to press them in:
+
+<img width="1440" height="1920" alt="image" src="https://github.com/user-attachments/assets/f0a4e573-1f76-489c-9050-b0e883d4376c" />
+
+After I assembled these on the carriage, I noticed something a bit weird, and that was that for some reason the sun gear and the planets didn't line up? I have no idea why this is happening, because its not like that in the CAD, but I've checked and it won't effect the performance so I don't really care enough to change it:
+
+<img width="3072" height="4080" alt="image" src="https://github.com/user-attachments/assets/fb3d1e95-9379-417d-a5ea-2e10172e8a6e" />
+
+Ok HUGE problem, and I think this is what actually caused the ridiculous amount of friction earlier. Turns out I do not know how planetary gears work. When I tried to assemble the ring gear on top of the carriage, the ring gear simply did not fit. This is because the sum of the teeth on the ring gear and the teeth on the sun gear (64) divided by the amount of planet gears (3) did not yield a whole number, meaning that the angle spacing between the planets has to be different or else the ring gear will not fit (credit to waitimoated for helping me find this). To fix this, some CAD changes were obviously necessary. Instead of offsetting the angle of the gears, I just decided to change the teeth count as a whole. I switched to 9t for the sun gear, 63t for the ring gear, and 27t for the planets, as well as a DP of 30.
+
+<img width="997" height="883" alt="image" src="https://github.com/user-attachments/assets/a65125cc-7e41-4ae3-a19a-db932149a660" />
+
+This was a pretty easy change, luckily most of my CAD is parametric. I did have to redo the weird things with the sun gear but that was pretty straightforward:
+
+<img width="1070" height="1100" alt="image" src="https://github.com/user-attachments/assets/e7c4655a-85e8-4ff7-88fc-abb38d2565c6" />
+
+I'm going to print these out with the same settings as before, hopefully they work:
+
+<img width="1748" height="1027" alt="image" src="https://github.com/user-attachments/assets/ecafe3f9-4f51-4c20-b20f-23b7f6494a5b" />
+
+**Total Time Spent: 2.28 Hours**
