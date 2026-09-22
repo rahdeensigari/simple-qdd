@@ -36,5 +36,7 @@ NOTE: A bulk of the price is because a lot of the fastners come in packs with wa
 
 Use these exploded and section views as well as the CAD link above while assembling. Some important notes, assemble the gear carriage, the bottom retention flange, and the bearing at once before putting it into the motor carriage. Make sure the motor is fully installed in the carriage and the sun gear is installed on the motor before inserting the bearing and gear carriage assembly. Make sure the heat-set inserts in the gear carriage are fully inserted, or else the countersunk bolts won't fit correctly.
 
+https://youtube.com/shorts/wS8en63CQcI
+
 If you are going to recoil the motor, use 26 AWG magnet wire with 46 turns-per-slot if you want to get to the same KV I used. Use the following diagram when you are recoiling:
 <img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/df721449-4257-437d-b8e5-80618dd2673c" />
