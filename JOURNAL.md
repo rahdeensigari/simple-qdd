@@ -740,3 +740,77 @@ I'm going to print these out with the same settings as before, hopefully they wo
 <img width="1748" height="1027" alt="image" src="https://github.com/user-attachments/assets/ecafe3f9-4f51-4c20-b20f-23b7f6494a5b" />
 
 **Total Time Spent: 2.28 Hours**
+
+# September 21 - Printing and Testing Changes:
+
+All the gears have been printed. Honestly, I might reprint these because my PETG-CF is too wet and its causing a lot of stringing. The problem is that I don't have a filament dryer so I literally need to use my oven.
+
+<img width="3072" height="4080" alt="image" src="https://github.com/user-attachments/assets/18c005df-4261-4ef8-a2f0-1ebe536bd04e" />
+
+I also had to reprint the gear carriage since it changed along with the gears:
+
+<img width="667" height="552" alt="image" src="https://github.com/user-attachments/assets/2bb63b27-ace4-4804-951a-b9a74c03ff70" />
+<img width="3072" height="4080" alt="image" src="https://github.com/user-attachments/assets/9d669663-9ce7-45ed-ab07-9af136e89409" />
+
+Even with the changed gear, it seems like the sun gear is still too big to fit. This is really weird because it worked fine with helical gears, but not with spur? I tried a lot of stuff to fix this, but what eventually worked was to bump up the side length reduction of the gears, make the layer height smaller, and switch to PLA. There's a lot of backlash now, but the gears align perfectly and spin almost frictionlessly:
+
+<img width="1440" height="1920" alt="image" src="https://github.com/user-attachments/assets/09b245f2-fd78-480b-8eea-26dcd32f5e35" />
+
+Now that I fixed that problem, I can move on with the rest of the assembly like normal. First, I had to transfer the heat-sets from the old gear carrier to the new one:
+
+<img width="1440" height="1920" alt="image" src="https://github.com/user-attachments/assets/990588c5-154e-4f48-8581-d8eaeb37b237" />
+<img width="1440" height="1920" alt="image" src="https://github.com/user-attachments/assets/bd5396e4-fbc6-4df4-946b-5ca8fc3f3054" />
+
+Next I assembled the rest of the gear carrier. To get the black retention lip to fit flush against the carrier, I had to sand the spots where I added heat-sets down to be flush:
+
+<img width="1440" height="1920" alt="image" src="https://github.com/user-attachments/assets/a4bd0f61-8dc0-4a12-86e5-f48776f93e81" />
+<img width="1440" height="1920" alt="image" src="https://github.com/user-attachments/assets/9147fd14-a5f6-4ae4-919d-d8a900ede216" />
+
+I bolted the new sun gear to the motor. Again, one of the bolts were kind of weird, but it works so I don't care:
+
+<img width="3072" height="4080" alt="image" src="https://github.com/user-attachments/assets/4936a915-0314-4929-8df0-be3815647d26" />
+
+Then I added the carriage and the planet gears:
+
+<img width="3072" height="4080" alt="image" src="https://github.com/user-attachments/assets/b453c528-de5b-4aaf-b024-7e46002e8517" />
+
+Also added the ring gear. I added white lithium grease as well to make it smoother:
+
+<img width="3072" height="4080" alt="image" src="https://github.com/user-attachments/assets/76446136-f9dd-498b-9fc9-36b9902d6b68" />
+
+Added the top cover and bolted everything in:
+
+<img width="3072" height="4080" alt="image" src="https://github.com/user-attachments/assets/e985da26-6a15-4ef9-9a88-3c4d8e3391cc" />
+
+Then, finally, the output disk:
+
+<img width="3072" height="4080" alt="image" src="https://github.com/user-attachments/assets/72742a00-3aaf-4f00-a002-4c919235bbef" />
+
+When I first back drived the full assembly, I was actually shocked by how little friction there was. I would definitely say that mechanically, this actuator was a success. With that out of the way, I proceeded to add the ODrive. Turns out, the button head screws that I ordered were the wrong size, meaning that I had to actually use flathead screws instead. This was a little bit scuffed, but it worked fine:
+
+<img width="3072" height="4080" alt="image" src="https://github.com/user-attachments/assets/aef76c21-bc0b-40bd-a34d-225821b99b59" />
+
+Added the phase wires:
+
+<img width="3072" height="4080" alt="image" src="https://github.com/user-attachments/assets/1ebce3b6-2d80-43cc-8ee0-63e1a6e88acb" />
+
+This is kind of weird. For some reason, the ODrive is not reacting to the power supply input at all. I used my multimeter to test all of the connections and I've narrowed it down to a problem with the ODrive. After taking it off the rest of the assembly. I think I've identified the problem. It seems like my solder joints were too weak to effectively carry current, so with some help from my Dad, I redid the solder on these pads:
+
+<img width="3072" height="4080" alt="image" src="https://github.com/user-attachments/assets/1a427c93-7a79-4545-8f7a-df3529510b38" />
+
+After putting everything back on, that seems to have fixed the problem, and I am now ready to test:
+
+<img width="3072" height="4080" alt="image" src="https://github.com/user-attachments/assets/86f882ad-fd57-4fde-8335-e63006d71cf0" />
+<img width="3072" height="4080" alt="image" src="https://github.com/user-attachments/assets/fb610cd9-09ba-4aaa-8598-0812317b9ec6" />
+
+Alright, here's what happened:
+- The actuator does spin!
+- I can feel that the motor is getting hot through the ventilation holes, this is expected.
+- The motor itself was vibrating violently. This was likely due to a mistake with my windings, I'm guessing that I accidently added one more coil on a slot than I was supposed to, causing vibrations.
+- The motion of the output disk itself was actually decently smooth.
+
+[Here](https://youtube.com/shorts/wS8en63CQcI) is a video of it working.
+
+With that, I think that I can wrap this project up, and overall I would consider it a success. While it did not work as smoothly as I anticipated, mechanically, I got the actuator to be very robust, and I learned how to recoil a motor if I ever need to do that again.
+
+**Total Time Spent: 2.64 Hours**
