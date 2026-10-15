@@ -1,4 +1,4 @@
-<img width="1440" height="1920" alt="image" src="https://github.com/user-attachments/assets/aa75c2b4-1c62-4401-991a-daaa71289b4d" /><img width="3072" height="4080" alt="image" src="https://github.com/user-attachments/assets/004b6a84-fc29-4108-bfc8-6800eb628bdf" /><img width="4080" height="3072" alt="image" src="https://github.com/user-attachments/assets/5c9308e0-3f77-43f8-aad4-06bc9fee7d68" /><img width="1068" height="1011" alt="image" src="https://github.com/user-attachments/assets/f429d06f-565c-44be-ba92-d4482c17a77d" />---
+---
 title: "Quasi-Direct Drive Actuator"
 author: "Rahdeen Sigari"
 description: "A small and cheap quasi-direct driven planetary robotic actuator."
